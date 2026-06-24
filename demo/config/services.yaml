@@ -30,3 +30,10 @@ services:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
+
+    # Loads the markdown movie fixtures for the "movies" indexer (see ai.yaml).
+    app.movies.loader:
+        class: Symfony\AI\Store\Document\Loader\DirectoryLoader
+        arguments:
+            $loaders:
+                md: !service { class: Symfony\AI\Store\Document\Loader\MarkdownLoader }

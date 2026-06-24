@@ -131,7 +131,7 @@ ai:
             vectorizer: 'ai.vectorizer.openai'
             store: 'ai.store.postgres.symfony_blog'
         movies:
-            loader: 'App\Movies\MarkdownDirectoryLoader'
+            loader: 'app.movies.loader'
             source: '%movies_dir%'
             transformers:
                 - 'Symfony\AI\Store\Document\Transformer\TextSplitTransformer'
